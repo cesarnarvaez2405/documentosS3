@@ -17,7 +17,7 @@ export class DocsService {
   async upload(fileName: string, file: Buffer) {
     return await this.s3Client.send(
       new PutObjectCommand({
-        Bucket: 'documentos-cesarnarvaez24',
+        Bucket: process.env.AWS_BUCKET_NAME,
         Key: fileName,
         Body: file,
       }),
