@@ -15,6 +15,10 @@ async function bootstrap() {
     }),
   );
 
+  app.enableCors({
+    origin: 'http://localhost:5173', // reemplaza esto con la URL de tu aplicación React
+  });
+
   await app.listen(process.env.PORT);
 }
 bootstrap();
